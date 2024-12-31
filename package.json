@@ -8,13 +8,16 @@
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
-    "test:watch": "jest --watchAll"
+    "test:watch": "jest --watchAll",
+    "services:up": "docker compose --file infra/compose.yaml up -d",
+    "services:down": "docker compose --file infra/compose.yaml down"
   },
   "keywords": [],
   "author": "Guilherme Cabral",
   "license": "MIT",
   "dependencies": {
     "next": "^13.1.6",
+    "pg": "^8.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
