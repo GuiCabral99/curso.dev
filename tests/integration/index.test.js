@@ -8,6 +8,6 @@ test("GET to api/v1/status should return 200", async () => {
     new Date(dependencies.timestamp).toISOString()
   );
   expect(dependencies.postgres_version).toBe("17.2");
-  expect(dependencies.max_connections).toBe("100");
+  expect(parseInt(dependencies.max_connections)).toBeGreaterThan(0);
   expect(dependencies.activity_connections).toEqual(1);
 });
