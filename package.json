@@ -10,12 +10,15 @@
     "test": "jest",
     "test:watch": "jest --watchAll",
     "services:up": "docker compose --file infra/compose.yaml up -d",
-    "services:down": "docker compose --file infra/compose.yaml down"
+    "services:down": "docker compose --file infra/compose.yaml down",
+    "migration:create": "node-pg-migrate --migrations-dir infra/migrations create",
+    "migration:up": "node-pg-migrate --migrations-dir infra/migrations --envPath .env.development up"
   },
   "keywords": [],
   "author": "Guilherme Cabral",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "next": "^13.1.6",
     "pg": "^8.13.1",
     "react": "^18.2.0",
@@ -23,6 +26,7 @@
   },
   "devDependencies": {
     "jest": "^29.7.0",
+    "node-pg-migrate": "^7.8.0",
     "prettier": "^3.4.2"
   }
 }
